@@ -25,6 +25,7 @@ foreach ($galleries as $gal){
   $fn = $directory . "comments.txt";
 
   if (file_exists($fn)) {
+    echo "<b>comments:</b> ";
     echo file_get_contents($fn);
   }
 

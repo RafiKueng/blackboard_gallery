@@ -1,15 +1,14 @@
-<html>
-<head>
-</head>
-<body>
-
-<h1>BlackBoard Gallery</h1>
-
 <?php
+
 $id = htmlspecialchars($_GET["id"]);
 $directory = "galleries/$id/";
 
-echo "<h2>$id</h2>";
+include 'head.php';
+
+echo "
+<h1>BlackBoard Gallery</h1>
+<h2>$id</h2>
+";
 
 $fn = $directory . "comments.txt";
 
@@ -30,11 +29,9 @@ $imgs = '';
 foreach($images as $image){ $imgs[] = "$image"; }
  
 foreach ($imgs as $img) {
-echo "<p><img src='$img' height='400px'/></p>";
+echo "<p><a href='$img'  data-lightbox='img_cat' data-title='$img'><img src='$img' height='400px' /></a></p>";
 }
 
+include 'foot.php';
+
 ?>
-
-
-
-</body>
