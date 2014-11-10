@@ -29,7 +29,7 @@ $imgs = '';
 foreach($images as $image){ $imgs[] = "$image"; }
  
 foreach ($imgs as $img) {
-echo "<p><a href='$img'  data-lightbox='img_cat' data-title='$img'><img src='$img' height='400px' /></a></p>";
+  echo "<p><a href='$img'  data-lightbox='img_cat' data-title='$img'><img src='$img' height='400px' /></a></p>";
 }
 
 include 'foot.php';

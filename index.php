@@ -1,7 +1,14 @@
 <?php
 $dir = "galleries/";
 
-$galleries = array_diff(scandir($dir), array('..', '.', 'js', 'css', 'img'));
+$galleries = array_diff(scandir($dir), array(
+  '..',
+  '.',
+  'js',
+  'css',
+  'img'
+  '.stfolder'
+  ));
 
 
 include 'head.php';
