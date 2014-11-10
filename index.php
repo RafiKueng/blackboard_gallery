@@ -6,8 +6,9 @@ $galleries = array_diff(scandir($dir), array(
   '.',
   'js',
   'css',
-  'img'
-  '.stfolder'
+  'img',
+  '.stfolder',
+  '.directory'
   ));
 
 
