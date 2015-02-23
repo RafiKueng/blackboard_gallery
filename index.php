@@ -24,10 +24,10 @@ echo "
   </p>
 ";
 
-foreach ($galleries as $gal){
+foreach (array_reverse($galleries) as $gal){
   echo "\n  <h2>$gal</h2>\n";
   
-  foreach (array_diff(scandir($dir . $gal), array('..','.')) as $entry) {
+  foreach (array_reverse(array_diff(scandir($dir . $gal), array('..','.'))) as $entry) {
     $lnk = "./galleries.php?id=$entry&amp;path=$gal";
     echo "    <a href='$lnk'>$entry</a><br />\n";
   }
