@@ -16,14 +16,21 @@ include 'head.php';
 
 echo "
 <body>
-<h1>BlackBoard Gallery</h1>
-<h2>PHY111</h2>
-<p>click <a href='all.php'>here</a> to see all on one page</p>
+  <h1>BlackBoard Gallery</h1>
+
+  <p>
+    Unofficial gallery of blackboard shots from the first year physics lecture by Prof. U. Straumann.<br>
+    It could be that they are not complete, not in the right order or contain errors. Use at own risk.
+  </p>
 ";
 
 foreach ($galleries as $gal){
-  $lnk = "./galleries.php?id=$gal";
-  echo "<a href='$lnk'>$gal</a><br />";
+  echo "\n  <h2>$gal</h2>\n";
+  
+  foreach (array_diff(scandir($dir . $gal), array('..','.')) as $entry) {
+    $lnk = "./galleries.php?id=$entry&amp;path=$gal";
+    echo "    <a href='$lnk'>$entry</a><br />\n";
+  }
 }
 
 include 'foot.php';
